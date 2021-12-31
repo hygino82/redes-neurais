@@ -104,7 +104,6 @@ public class Rede {
 		while (iteracoes < numeroIteracoes) {
 			iteracoes++;
 
-			// double valorIteracao = teta;// xteta
 			System.out.printf("Iteração #%d\n", iteracoes);
 			for (int i = 0; i < d.length; i++) {
 				double valorIteracao = teta;// xteta
@@ -113,7 +112,7 @@ public class Rede {
 					valorIteracao += w[u] * x[i][u];// w[0]
 					System.out.printf("X[%d] = %.9f\n", (u + 1), x[i][u]);
 				}
-				// passagem por valorIteracao += w[0] * x[i][0] + teta;
+
 				System.out.printf("i_A[%d] = %.9f\n", (i + 1), valorIteracao);
 				double funAtivacao = funcaoAtivacao(valorIteracao);
 				System.out.printf("Função de ativação A[%d] = %.9f\n", (i + 1), funAtivacao);
@@ -121,7 +120,7 @@ public class Rede {
 				double[] varW = new double[w.length];
 
 				System.out.printf("Nova taxa = %.9f\n", nTaxa);
-
+				System.out.printf("Taxa * n = %.9f\n", (nTaxa * n));//produto das taxas
 				for (int j = 0; j < w.length; j++) {
 					varW[j] = nTaxa * x[i][j] * n;
 					w[j] += varW[j];
@@ -134,8 +133,7 @@ public class Rede {
 				System.out.printf("Teta = %.9f\n\n", teta);
 
 			}
-
+			System.out.println("-------------------------------------------------------");
 		}
-
 	}
 }
